@@ -25,7 +25,7 @@ app.use("/create-pdf", createPdfRouter);
 app.use("/download", downloadRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res) => {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
